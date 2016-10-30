@@ -18,13 +18,14 @@ router.post('/result', function(req, res) {
 
 	var rand = Math.floor(Math.random() * 8);
 
-	yelp.search({ term: req.body.food, location: req.body.location , limit: 10 })
+	yelp.search({ term: "food", location: req.body.location , limit: 10 })
 	.then(function (data) {
 		console.log(data);
 		res.render('index', { 
 			output_name: "Name: " + data.businesses[rand].name, 
 			output_rating: "Rating: " + data.businesses[rand].rating,
-			output_phone: "Phone: " + data.businesses[rand].phone
+			output_phone: "Phone: " + data.businesses[rand].phone,
+			output_price: "Price: " + data.businesses[rand].price
 			//output_website: data.businesses.url
 		});
 	})

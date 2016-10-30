@@ -7,4 +7,4 @@ Instructions
 
 3) cd routes
 
-4) node index.js
+4) npm start
